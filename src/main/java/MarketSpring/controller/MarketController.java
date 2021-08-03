@@ -10,6 +10,8 @@ import MarketSpring.model.StorageModel;
 import MarketSpring.service.MarketService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Set;
+
 @RestController
 @RequestMapping("/market")
 public class MarketController {
@@ -44,7 +46,7 @@ public class MarketController {
         return marketService.addNewStorage(id, storageModel);
     }
 
-    @DeleteMapping("/{idMarket}/{idStorage}")
+    @DeleteMapping("/{idMarket}/deleteStorage/{idStorage}")
     @ResponseBody
     public StorageMarketEntity deleteStorageFromMarket(@PathVariable Long idMarket, @PathVariable Long idStorage) throws Exception {
         return marketService.deleteStorageFromMarket(idMarket, idStorage);
@@ -52,7 +54,7 @@ public class MarketController {
 
     @GetMapping("/{id}/storages")
     @ResponseBody
-    public MarketEntity getStorages(@PathVariable Long id) throws Exception {
+    public Set<StorageMarketEntity> getStorages(@PathVariable Long id) throws Exception {
         return marketService.getStorages(id);
     }
 
@@ -61,6 +63,19 @@ public class MarketController {
     public ProvisionerEntity addNewProvisioner(@PathVariable Long id, @RequestBody ProvisionerModel provisionerModel) throws Exception {
         return marketService.addNewProvisioner(id, provisionerModel);
     }
+
+    @DeleteMapping("/{idMarket}/deleteProvisioner/{idProvisioner}")
+    @ResponseBody
+    public ProvisionerEntity deleteProvisionerFromMarket(@PathVariable Long idMarket, @PathVariable Long idProvisioner) throws Exception {
+        return marketService.deleteProvisionerFromMarket(idMarket, idProvisioner);
+    }
+
+    @GetMapping("/{id}/provisioners")
+    @ResponseBody
+    public Set<ProvisionerEntity> getProvisioners(@PathVariable Long id) throws Exception {
+        return marketService.getProvisioners(id);
+    }
+
 
 
 }

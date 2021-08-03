@@ -8,6 +8,8 @@ import MarketSpring.model.ProvisionerModel;
 import MarketSpring.model.StorageModel;
 import org.springframework.stereotype.Service;
 
+import java.util.Set;
+
 @Service
 public class MarketService {
 
@@ -32,11 +34,19 @@ public class MarketService {
         throw new Exception("No realization");
     }
 
-    public MarketEntity getStorages(Long id) throws Exception {
+    public Set<StorageMarketEntity> getStorages(Long id) throws Exception {
         throw new Exception("No realization");
     }
 
     public ProvisionerEntity addNewProvisioner(Long id, ProvisionerModel provisionerModel) throws Exception {
+        throw new Exception("No realization");
+    }
+
+    public ProvisionerEntity deleteProvisionerFromMarket(Long idMarket, Long idProvisioner) throws Exception {
+        throw new Exception("No realization");
+    }
+
+    public Set<ProvisionerEntity> getProvisioners(Long id) throws Exception {
         throw new Exception("No realization");
     }
 }

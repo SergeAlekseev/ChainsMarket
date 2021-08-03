@@ -4,13 +4,13 @@ import MarketSpring.entity.MapLocationEntity;
 
 public class MarketModel {
     private String name;
-    private MapLocationEntity location;
+    private MapLocationModel location;
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public void setLocation(MapLocationEntity location) {
+    public void setLocation(MapLocationModel location) {
         this.location = location;
     }
 
@@ -18,7 +18,7 @@ public class MarketModel {
         return name;
     }
 
-    public MapLocationEntity getLocation() {
+    public MapLocationModel getLocation() {
         return location;
     }
 }

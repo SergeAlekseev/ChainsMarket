@@ -5,7 +5,7 @@ import MarketSpring.entity.MapLocationEntity;
 public class StorageModel {
 
     private String name;
-    private MapLocationEntity location;
+    private MapLocationModel location;
     private Long idType;
     private double capacity;
 
@@ -29,7 +29,7 @@ public class StorageModel {
         this.name = name;
     }
 
-    public void setLocation(MapLocationEntity location) {
+    public void setLocation(MapLocationModel location) {
         this.location = location;
     }
 
@@ -37,7 +37,7 @@ public class StorageModel {
         return name;
     }
 
-    public MapLocationEntity getLocation() {
+    public MapLocationModel getLocation() {
         return location;
     }
 

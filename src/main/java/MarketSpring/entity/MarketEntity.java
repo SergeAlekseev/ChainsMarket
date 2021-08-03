@@ -26,6 +26,9 @@ public class MarketEntity {
     @ManyToMany(mappedBy = "markets", fetch = FetchType.EAGER)
     private Set<StorageMarketEntity> storages;
 
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "market", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<GroupPersonalEntity> groupsPersonal;
+
     @ManyToMany(mappedBy = "markets", fetch = FetchType.EAGER)
     private Set<ProvisionerEntity> provisioners;
 
@@ -51,5 +54,29 @@ public class MarketEntity {
 
     public Long getId() {
         return id;
+    }
+
+    public Set<GroupPersonalEntity> getGroupsPersonal() {
+        return groupsPersonal;
+    }
+
+    public void setGroupsPersonal(Set<GroupPersonalEntity> groupsPersonal) {
+        this.groupsPersonal = groupsPersonal;
+    }
+
+    public Set<StorageMarketEntity> getStorages() {
+        return storages;
+    }
+
+    public void setStorages(Set<StorageMarketEntity> storages) {
+        this.storages = storages;
+    }
+
+    public Set<ProvisionerEntity> getProvisioners() {
+        return provisioners;
+    }
+
+    public void setProvisioners(Set<ProvisionerEntity> provisioners) {
+        this.provisioners = provisioners;
     }
 }

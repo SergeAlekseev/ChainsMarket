@@ -5,7 +5,7 @@ import MarketSpring.entity.MapLocationEntity;
 public class ProvisionerModel {
 
     private String name;
-    private MapLocationEntity location;
+    private MapLocationModel location;
     private Long idType;
 
     public void setIdType(Long idType) {
@@ -20,7 +20,7 @@ public class ProvisionerModel {
         this.name = name;
     }
 
-    public void setLocation(MapLocationEntity location) {
+    public void setLocation(MapLocationModel location) {
         this.location = location;
     }
 
@@ -28,7 +28,7 @@ public class ProvisionerModel {
         return name;
     }
 
-    public MapLocationEntity getLocation() {
+    public MapLocationModel getLocation() {
         return location;
     }
 
